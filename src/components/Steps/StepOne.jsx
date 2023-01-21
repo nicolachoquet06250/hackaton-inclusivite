@@ -2,6 +2,7 @@ const StepOne = () => {
 
     return(
         <div className={"newMenuButtonContainer"}>
+            Bonjour
         </div>
     )
 }
