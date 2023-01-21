@@ -3,12 +3,15 @@ import PublicStepOne from "./PublicSteps/StepOne.jsx";
 import PublicStepTwo from "./PublicSteps/StepTwo.jsx";
 import PrivateStepOne from "./PrivateSteps/StepOne.jsx";
 import PrivateStepTwo from "./PrivateSteps/StepTwo.jsx";
+import PrivateStepThree from "./PrivateSteps/StepThree.jsx";
 import MultiStep from "./MultiStep";
 import { useState } from "react";
+import StepFour from "./PrivateSteps/StepFour";
 
 const PublicMenuModal = ({isActive, onClose}) => {
     const [eventType, setEventType] = useState('public');
-    const [isShowEventTypeSelect, showEventTypeSelect] = useState(true)
+    const [isShowEventTypeSelect, showEventTypeSelect] = useState(true);
+    const [isValidate, setValidate] = useState(false);
 
     const values = {
         public: 'Publique',
@@ -20,7 +23,8 @@ const PublicMenuModal = ({isActive, onClose}) => {
         PublicStepTwo
     ] : [
         PrivateStepOne,
-        PrivateStepTwo
+        PrivateStepTwo,
+        PrivateStepThree,
     ]
 
     const handleModal = (e) => {
@@ -36,8 +40,8 @@ const PublicMenuModal = ({isActive, onClose}) => {
         <div onClick={onClose} 
              className={`overlay ${isActive ? "active" : ""} top-0 bottom-0 right-0 left-0 absolute`}>
             <div onClick={handleModal} className={ `${isActive ? "active" : ""} modal` }>
-                <h1> Voulez vous créer un événement : {!isShowEventTypeSelect && values[eventType]}</h1>
-                {isShowEventTypeSelect && <div>
+                <h1 className='ml-5'> Voulez vous créer un événement : {!isShowEventTypeSelect && values[eventType]}</h1>
+                {isShowEventTypeSelect && !isValidate && <div>
                     <select onChange={handleRadioChange} value={eventType} style={{ color: 'black' }}>
                         <option value={'public'}>
                             Publique
@@ -48,7 +52,11 @@ const PublicMenuModal = ({isActive, onClose}) => {
                     </select>
                 </div>}
 
-                <MultiStep steps={steps} onNext={() => showEventTypeSelect(false)} />
+                {!isValidate && <MultiStep  steps={steps} 
+                            onNext={() => showEventTypeSelect(false)} 
+                            onValidate={() => setValidate(true)} />}
+
+                {isValidate && <StepFour />}
             </div>
         </div>
     )
