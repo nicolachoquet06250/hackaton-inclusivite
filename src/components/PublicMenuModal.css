@@ -1,0 +1,10 @@
+.publicMenuModalContainer {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    display: none;
+}
+
+.publicMenuModalContainer.active {
+    display: block;
+}
