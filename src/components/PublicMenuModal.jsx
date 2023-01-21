@@ -38,7 +38,7 @@ const PublicMenuModal = ({isActive, onClose}) => {
 
     return (
         <div onClick={onClose} 
-             className={`overlay ${isActive ? "active" : ""} top-0 bottom-0 right-0 left-0 absolute`}>
+             className={`overlay ${isActive ? "active" : ""} top-0 bottom-0 right-0 left-0 fixed`}>
             <div onClick={handleModal} className={ `${isActive ? "active" : ""} modal` }>
                 <h1 className={"mb-2"}> Voulez vous créer un événement : {!isShowEventTypeSelect && values[eventType]}</h1>
                 {isShowEventTypeSelect && !isValidate && <div style={{marginBottom: "25px"}}>

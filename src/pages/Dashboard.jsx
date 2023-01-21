@@ -3,7 +3,7 @@ import NewMenuButton from "../components/NewMenuButton";
 import PublicMenuModal from "../components/PublicMenuModal";
 import CardItem from '../components/CardItem';
 import logo from '../assets/logo.png';
-import profilPicture from '../assets/man.png';
+import profilPicture from '../assets/woman.png';
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -39,7 +39,7 @@ const Navbar = () => {
                   >
                     <i className="fa-solid fa-right-from-bracket text-lg leading-lg text-black opacity-75"></i>
                     <span className='ml-2'>
-                        Tonton Kevin
+                        Amel
                     </span>
                     <img src={profilPicture} alt="profilpicture" className="ml-3 rounded-full w-10 h-10"/>
                   </a>
@@ -134,66 +134,63 @@ const Dashboard = () => {
                 </div>)}
 
             {menus.map((menu, i) =>
-                (
-                    <div className='bg-my-white mt-20 w-1/3 h-1/4 card mt-28'>
-                <CardItem key={i}>
-                    <h2 className='text-xl'>
-                        {menu.title}
-                    </h2>
-                    <hr className='h-2 mt-2' />
-                    <ul className='list-disc ml-4'>
-                        <li>
-                            {menu.menu.type}
+                (<div key={i} className='bg-my-white mt-20 w-1/3 h-1/4 card mt-28'>
+                  <CardItem>
+                      <h2 className='text-xl'>
+                          {menu.title}
+                      </h2>
+                      <hr className='h-2 mt-2' />
+                      <ul className='list-disc ml-4'>
+                          <li>
+                              {menu.menu.type}
 
-                            <ul className='list-disc ml-4'>
-                                {menu.menu.details.map((d, i) => (<li key={i}>
-                                    {d.name}{d.type ? `: ${d.type}` : ''}
-                                </li>))}
-                            </ul>
-                        </li>
+                              <ul className='list-disc ml-4'>
+                                  {menu.menu.details.map((d, i) => (<li key={i}>
+                                      {d.name}{d.type ? `: ${d.type}` : ''}
+                                  </li>))}
+                              </ul>
+                          </li>
 
-                        <li>
-                            <b>{menu.menu.presents}</b> participants total
+                          <li>
+                              <b>{menu.menu.presents}</b> participants total
 
-                            <ul className='list-disc ml-4'>
-                                {Object.keys(menu.menu.categories).map((c, i) => (<li key={i}>
-                                    <b>{menu.menu.categories[c]}</b> {c}
-                                </li>))}
-                            </ul>
-                        </li>
+                              <ul className='list-disc ml-4'>
+                                  {Object.keys(menu.menu.categories).map((c, i) => (<li key={i}>
+                                      <b>{menu.menu.categories[c]}</b> {c}
+                                  </li>))}
+                              </ul>
+                          </li>
 
-                        <li>
-                            {menu.menu.typeMenuChoice}
-                        </li>
+                          <li>
+                              {menu.menu.typeMenuChoice}
+                          </li>
 
-                        <li>
-                            {menu.menu.resultChoice}
+                          <li>
+                              {menu.menu.resultChoice}
 
-                            <ul>
-                                <li>
-                                    <div className='mt-4'>Traiteur choisis :</div>
-                                    <div className='bg-my-white mt-20 w-1/3 h-1/4 card mt-28'>
-                                    <CardItem >
-                                        <h2>{menu.menu.result.name}</h2>
+                              <ul>
+                                  <li>
+                                      <div className='mt-4'>Traiteur choisis :</div>
+                                      <div className='bg-my-white mt-20 w-2/3 h-1/4 card mt-28'>
+                                      <CardItem >
+                                          <h2>{menu.menu.result.name}</h2>
 
-                                        <hr className='h-2 mt-2' />
+                                          <hr className='h-2 mt-2' />
 
-                                        <p>
-                                        {menu.menu.result.address},
-                                        <br />
-                                        {menu.menu.result.zip} {menu.menu.result.city}
-                                        </p>
-                                    </CardItem>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </CardItem>
-                </div>
-                
-                ),
-                )}
+                                          <p>
+                                          {menu.menu.result.address},
+                                          <br />
+                                          {menu.menu.result.zip} {menu.menu.result.city}
+                                          </p>
+                                      </CardItem>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </CardItem>
+                </div>),
+            )}
         </div>
         <div className="flex justify-center">
             <NewMenuButton handleModal={handleModal}/>
