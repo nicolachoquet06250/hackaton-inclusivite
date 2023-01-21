@@ -1,9 +1,20 @@
 import "./PublicMenuModal.css";
 
 
-const PublicMenuModal = () => {
+const PublicMenuModal = ({isActive, onClose}) => {
+
+    const handleOverlay = () => {
+        onClose();
+    }
+
+    const handleModal = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
     return(
-        <div className={"publicMenuModalContainer"}>
+        <div onClick={handleOverlay} className={`overlay ${isActive ? "active" : ""} top-0 bottom-0 right-0 left-0 absolute`}>
+            <div onClick={handleModal} className={ `${isActive ? "active" : ""} modal` }></div>
         </div>
     )
 }
