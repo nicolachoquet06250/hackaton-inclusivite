@@ -32,17 +32,17 @@ const StepTwo = () => {
     }
 
     return (
-        <div className={"newMenuButtonContainer"}>
-            <div>
-                Saisissez le nombre de participants : <br />
+        <div className={"newMenuButtonContainer"} style={{height: "calc(100% - 70px)"}}>
+            <div className={"mb-2"}>
+                <div className={"mb-2"}> Saisissez le nombre de participants : </div>
                 <input  type='number' 
                         value={nbParticipant} 
                         onChange={e => setNbParticipant(e.target.value)}
                         style={{ color: 'black' }} />
             </div>
 
-            <div>
-                Choisir les spécificités :<br />
+            <div className={"mb-2"}>
+                <div className={"mb-2"}>Choisir les spécificités :</div>
                 <select multiple onChange={handleChangeMultiple} style={{ color: 'black' }}>
                     <option value='vegetarien'>
                         Végétarien
@@ -69,8 +69,8 @@ const StepTwo = () => {
             </div>
 
             {specificites.map((s, i) => 
-                (<div key={i}>
-                    Saisissez le nombre de participants {s} : <br />
+                (<div className={"mb-2"} key={i}>
+                    <div>Saisissez le nombre de participants {s} :</div>
                     <input  type='number' 
                             value={nbParticipantPerSpecificite[s]} 
                             onChange={e => setNbParticipantPerSpecificite(c => ({ ...c, [s]: parseInt(e.target.value) }))}

@@ -9,7 +9,7 @@ import { useState } from "react";
 import StepFour from "./PrivateSteps/StepFour";
 
 const PublicMenuModal = ({isActive, onClose}) => {
-    const [eventType, setEventType] = useState('public');
+    const [eventType, setEventType] = useState('private');
     const [isShowEventTypeSelect, showEventTypeSelect] = useState(true);
     const [isValidate, setValidate] = useState(false);
 
@@ -40,8 +40,8 @@ const PublicMenuModal = ({isActive, onClose}) => {
         <div onClick={onClose} 
              className={`overlay ${isActive ? "active" : ""} top-0 bottom-0 right-0 left-0 absolute`}>
             <div onClick={handleModal} className={ `${isActive ? "active" : ""} modal` }>
-                <h1 className='ml-5'> Voulez vous créer un événement : {!isShowEventTypeSelect && values[eventType]}</h1>
-                {isShowEventTypeSelect && !isValidate && <div>
+                <h1 className={"mb-2"}> Voulez vous créer un événement : {!isShowEventTypeSelect && values[eventType]}</h1>
+                {isShowEventTypeSelect && !isValidate && <div style={{marginBottom: "25px"}}>
                     <select onChange={handleRadioChange} value={eventType} style={{ color: 'black' }}>
                         <option value={'public'}>
                             Publique

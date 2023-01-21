@@ -19,10 +19,10 @@ const StepOne = () => {
 
     return (
         <div className={"newMenuButtonContainer"}>
-            <div>
+            <div className={'mb-2'}>
                 Selectionner le type de menu :
             </div>
-            <select onChange={e => setMenuType(e.target.value)} value={menuType} style={{ color: 'black' }}>
+            <select onChange={e => setMenuType(e.target.value)} value={menuType} style={{ color: 'black', marginBottom: '25px' }}>
                 <option value={'repas'}>Repas</option>
                 <option value={'apero'}>Tapas/Apéro</option>
                 <option value={'buffet'}>Buffet</option>
@@ -30,7 +30,8 @@ const StepOne = () => {
 
             {menuType === 'repas' && (<>
                 <div>
-                    Que souhetez vous dans votre repas ? <br />
+                    <div className={'mb-2'}>Que souhaitez vous dans votre repas ?</div>
+                    <div style={{marginBottom: "25px"}}>
                     <select multiple onChange={handleChangeMultiple} style={{ color: 'black' }}>
                         <option value='plat'>
                             Plat
@@ -46,9 +47,10 @@ const StepOne = () => {
                         </option>
                     </select>
                 </div>
+                </div>
 
                 {repasComposants.indexOf('boissons') !== -1 && (<div>
-                    Voulez vous des boissons avec ou sans alcool ? <br />
+                    <div className={"mb-2"}>Voulez vous des boissons avec ou sans alcool ?</div>
                     <select value={alcool} onChange={e => setAlcool(e.target.value)} style={{ color: 'black' }}>
                         <option value={'sansAlcool'}>
                             Sans alcool
@@ -61,7 +63,7 @@ const StepOne = () => {
             </>)}
 
             {menuType === 'apero' && (<div>
-                Voulez vous des boissons avec ou sans alcool ? <br />
+                <div className={"mb-2"}>Voulez vous des boissons avec ou sans alcool ?</div>
                 <select value={alcool} onChange={e => setAlcool(e.target.value)} style={{ color: 'black' }}>
                     <option value={'sansAlcool'}>
                         Sans alcool
