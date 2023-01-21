@@ -100,7 +100,6 @@ const Dashboard = () => {
         setIsActive(!isActive);
     }
 
-
     return (<>
         <Navbar />
         
