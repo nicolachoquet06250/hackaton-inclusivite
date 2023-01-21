@@ -105,8 +105,11 @@ const Dashboard = () => {
                 ],
                 presents: 25,
                 categories: {
-                    'Végans': 5,
-                    'Viandes': 20
+                    'Crustacés': 1,
+                    'Arachide': 1,
+                    'Végans': 3,
+                    'Gluten': 2,
+                    'Viandes': 18
                 },
                 typeMenuChoice: 'Plusieurs menus',
                 resultChoice: 'Liste de réstaurateurs/traiteurs locaux pouvant répondre au besoin',
