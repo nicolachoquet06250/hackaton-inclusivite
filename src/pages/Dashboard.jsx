@@ -2,6 +2,8 @@ import {useState} from "react";
 import NewMenuButton from "../components/NewMenuButton";
 import PublicMenuModal from "../components/PublicMenuModal";
 import CardItem from '../components/CardItem';
+import logo from '../assets/logo.png';
+import profilPicture from '../assets/man.png';
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -131,8 +133,10 @@ const Dashboard = () => {
                     Vous n'avez créé aucun menu.
                 </div>)}
 
-            {menus.map((menu, i) => 
-                (<CardItem key={i}>
+            {menus.map((menu, i) =>
+                (
+                    <div className='bg-my-white mt-20 w-1/3 h-1/4 card mt-28'>
+                <CardItem key={i}>
                     <h2 className='text-xl'>
                         {menu.title}
                     </h2>
@@ -168,6 +172,7 @@ const Dashboard = () => {
                             <ul>
                                 <li>
                                     <div className='mt-4'>Traiteur choisis :</div>
+                                    <div className='bg-my-white mt-20 w-1/3 h-1/4 card mt-28'>
                                     <CardItem >
                                         <h2>{menu.menu.result.name}</h2>
 
@@ -179,11 +184,15 @@ const Dashboard = () => {
                                         {menu.menu.result.zip} {menu.menu.result.city}
                                         </p>
                                     </CardItem>
+                                    </div>
                                 </li>
                             </ul>
                         </li>
                     </ul>
-                </CardItem>),
+                </CardItem>
+                </div>
+                
+                ),
                 )}
         </div>
         <div className="flex justify-center">

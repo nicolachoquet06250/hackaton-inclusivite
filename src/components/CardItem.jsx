@@ -1,4 +1,4 @@
-const CardItem = ({ children }) => (<div className='w-full card'>
+const CardItem = ({ children }) => (<div className='w-full'>
     {children}
 </div>);
 
