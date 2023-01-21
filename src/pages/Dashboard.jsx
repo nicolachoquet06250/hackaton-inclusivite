@@ -163,7 +163,9 @@ const Dashboard = () => {
                     </ul>
                 </CardItem>))}
         </div>
+
         <NewMenuButton handleModal={handleModal}/>
+        
         <PublicMenuModal isActive={isActive} onClose={() => setIsActive(false)}/>
     </>);
 }

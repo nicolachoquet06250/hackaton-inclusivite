@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const MultiStep = ({steps}) => {
+const MultiStep = ({steps, onNext}) => {
     const [index, setIndex] = useState(0);
 
     const Component = steps[index];
@@ -11,6 +11,7 @@ const MultiStep = ({steps}) => {
             return;
         }
         setIndex(index - 1);
+        onNext();
     }
 
     const increment = () => {
@@ -19,6 +20,7 @@ const MultiStep = ({steps}) => {
             return;
         }
         setIndex(index + 1);
+        onNext();
     }
 
     return(
