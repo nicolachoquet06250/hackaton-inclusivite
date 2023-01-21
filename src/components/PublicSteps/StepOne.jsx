@@ -1,8 +1,7 @@
 const StepOne = () => {
-
-    return(
+    return (
         <div className={"newMenuButtonContainer"}>
-            Bonjour
+            public Bonjour
         </div>
     )
 }

@@ -1,10 +1,10 @@
-const StepTwo = () => {
+const StepOne = () => {
 
     return(
         <div className={"newMenuButtonContainer"}>
-            Au revoir
+            privé Bonjour
         </div>
     )
 }
 
-export default StepTwo;
+export default StepOne;

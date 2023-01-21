@@ -1,12 +1,16 @@
 .modal {
-    min-width: 600px;
-    height: 500px;
-    background-color: red;
+    min-width: 200px;
+    max-width: 100%;
+    min-height: 500px;
+    background-color: theme('colors.gray.900');
+    color: white;
     display: none;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .modal.active {
@@ -19,4 +23,5 @@
 
 .overlay.active {
     display: block;
+    background-color: rgba(0, 0, 0, .5);
 }
