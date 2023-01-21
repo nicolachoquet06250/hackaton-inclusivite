@@ -3,8 +3,7 @@
 
 const LoginBox = () => {
   return (
-    <>
-      <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>
             <img
@@ -25,16 +24,6 @@ const LoginBox = () => {
               </a>
             </p>
           </div>
-
-
-
-
-
-
-
-
-
-
 
           <div className="bg-white px-10 pt-3 pb-9 rounded-lg">
             <form className="space-y-6" action="#" method="POST">
@@ -132,23 +121,8 @@ const LoginBox = () => {
               </div>
             </form>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
       </div>
-    </>
   );
 }
 
