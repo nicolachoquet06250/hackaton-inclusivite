@@ -1,12 +1,7 @@
 import {useState} from "react";
 import NewMenuButton from "../components/NewMenuButton";
 import PublicMenuModal from "../components/PublicMenuModal";
-import profilPicture from '../assets/man.png';
-import logo from '../assets/logo.png';
-
-const CardItem = ({ children }) => (<div className='bg-my-white mt-20 w-1/3 h-1/4 card mt-28'>
-    {children}
-</div>);
+import CardItem from '../components/CardItem';
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -42,7 +37,7 @@ const Navbar = () => {
                   >
                     <i className="fa-solid fa-right-from-bracket text-lg leading-lg text-black opacity-75"></i>
                     <span className='ml-2'>
-                        Nicolas Choquet
+                        Tonton Kevin
                     </span>
                     <img src={profilPicture} alt="profilpicture" className="ml-3 rounded-full w-10 h-10"/>
                   </a>
@@ -60,7 +55,7 @@ const Dashboard = () => {
 
     const [menus, setMenus] = useState([
         {
-            title: 'Hackaton 2022',
+            title: 'Anniversaire Tata Janine',
             menu: {
                 type: 'Repas',
                 details: [
