@@ -1,4 +1,6 @@
-import { useState } from "react";
+import {useState} from "react";
+import NewMenuButton from "../components/NewMenuButton";
+import PublicMenuModal from "../components/PublicMenuModal";
 
 const CardItem = ({ children }) => (<div className='w-full card'>
     {children}
@@ -55,6 +57,8 @@ const Navbar = () => {
 };
 
 const Dashboard = () => {
+    const [isActive, setIsActive] = useState(false);
+
     const [menus, setMenus] = useState([
         {
             title: 'Hackaton 2022',
@@ -91,6 +95,10 @@ const Dashboard = () => {
             }
         }
     ]);
+
+    const handleModal = () => {
+        setIsActive(!isActive);
+    }
 
     return (<>
         <Navbar />
@@ -155,6 +163,8 @@ const Dashboard = () => {
                     </ul>
                 </CardItem>))}
         </div>
+        <NewMenuButton handleModal={handleModal}/>
+        <PublicMenuModal isActive={isActive} onClose={() => setIsActive(false)}/>
     </>);
 }
 

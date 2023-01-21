@@ -1,0 +1,22 @@
+.modal {
+    min-width: 600px;
+    height: 500px;
+    background-color: red;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal.active {
+    display: block;
+}
+
+.overlay {
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
