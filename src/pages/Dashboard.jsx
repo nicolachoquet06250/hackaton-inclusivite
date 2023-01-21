@@ -1,8 +1,10 @@
 import {useState} from "react";
 import NewMenuButton from "../components/NewMenuButton";
 import PublicMenuModal from "../components/PublicMenuModal";
+import profilPicture from '../assets/man.png';
+import logo from '../assets/logo.png';
 
-const CardItem = ({ children }) => (<div className='w-full card'>
+const CardItem = ({ children }) => (<div className='bg-my-white mt-20 w-1/3 h-1/4 card mt-28'>
     {children}
 </div>);
 
@@ -11,17 +13,12 @@ const Navbar = () => {
 
     return (
       <>
-        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-slate-500 mb-3">
-          <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-            <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-              <a
-                className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                href="#pablo"
-              >
-                MyDiet
-              </a>
+        <nav className="bg-my-white fixed flex flex-wrap items-center justify-between min-w-full px-2 py-3 ">
+          <div className="mx-auto flex flex-wrap items-center justify-between w-full">
+            <img src={logo} alt="logo" className="ml-3 rounded-lg w-14 h-14"/>
+            <div className="w-full ml-2 relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
               <button
-                className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                className="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
@@ -36,16 +33,18 @@ const Navbar = () => {
               }
               id="example-navbar-danger"
             >
+                
               <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                 <li className="nav-item">
                   <a
-                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
                     href="/"
                   >
-                    <i className="fa-solid fa-right-from-bracket text-lg leading-lg text-white opacity-75"></i>
+                    <i className="fa-solid fa-right-from-bracket text-lg leading-lg text-black opacity-75"></i>
                     <span className='ml-2'>
                         Nicolas Choquet
                     </span>
+                    <img src={profilPicture} alt="profilpicture" className="ml-3 rounded-full w-10 h-10"/>
                   </a>
                 </li>
               </ul>
@@ -66,7 +65,7 @@ const Dashboard = () => {
                 type: 'Repas',
                 details: [
                     {
-                        name: 'Entré'
+                        name: 'Entrée'
                     },
                     {
                         name: 'Plat'
@@ -93,6 +92,31 @@ const Dashboard = () => {
                     zip: '06000'
                 }
             }
+        },
+        {
+            title: 'Séminaire Norsys',
+            menu: {
+                type: 'Apéro',
+                details: [
+                    {
+                        name: 'Boisson',
+                        type: 'Avec alcool'
+                    }
+                ],
+                presents: 25,
+                categories: {
+                    'Végans': 5,
+                    'Viandes': 20
+                },
+                typeMenuChoice: 'Plusieurs menus',
+                resultChoice: 'Liste de réstaurateurs/traiteurs locaux pouvant répondre au besoin',
+                result: {
+                    name: 'AlloTapas',
+                    address: '2 rue des tapas',
+                    city: 'Nice',
+                    zip: '06000'
+                }
+            }
         }
     ]);
 
@@ -103,9 +127,9 @@ const Dashboard = () => {
     return (<>
         <Navbar />
         
-        <div className='flex min-h-full py-4 px-4 sm:px-6 lg:px-8'>
+        <div className='bg-my-green1 justify-evenly flex min-h-screen py-4 px-4 sm:px-6 lg:px-8'>
             {menus.length === 0 && 
-                (<div className='w-full text-white text-center'>
+                (<div className='w-full text-black text-center'>
                     Vous n'avez créé aucun menu.
                 </div>)}
 
@@ -146,7 +170,7 @@ const Dashboard = () => {
                             <ul>
                                 <li>
                                     <div className='mt-4'>Traiteur choisis :</div>
-                                    <CardItem>
+                                    <CardItem >
                                         <h2>{menu.menu.result.name}</h2>
 
                                         <hr className='h-2 mt-2' />
@@ -161,10 +185,13 @@ const Dashboard = () => {
                             </ul>
                         </li>
                     </ul>
-                </CardItem>))}
+                </CardItem>),
+                )}
         </div>
-
-        <NewMenuButton handleModal={handleModal}/>
+        <div className="flex justify-center">
+            <NewMenuButton handleModal={handleModal}/>
+        </div>
+        
         
         <PublicMenuModal isActive={isActive} onClose={() => setIsActive(false)}/>
     </>);

@@ -1,8 +1,15 @@
-const NewMenuButton = ({handleModal}) => {
-    return (<button className={"w-10 h-10 bg-red-500 text-center absolute right-0 bottom-0 mb-5 mr-5 rounded-full bg-gray-900 text-white"} 
-                    onClick={handleModal}>
-        +
-    </button>);
-}
+const NewMenuButton = ({ handleModal }) => {
+  return (
+    <button
+      className={
+        "bg-my-orange w-auto h-auto p-3 bg-red-500 text-center absolute text-2xl bottom-0 mb-16 mr-5 rounded-lg text-white"
+      }
+      onClick={handleModal}
+    >
+      <i className="fa-solid fa-plus mr-2"></i>
+      Menu
+    </button>
+  );
+};
 
 export default NewMenuButton;
