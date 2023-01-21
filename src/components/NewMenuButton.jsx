@@ -2,7 +2,7 @@ const NewMenuButton = ({ handleModal }) => {
   return (
     <button
       className={
-        "bg-my-orange w-auto h-auto p-3 bg-red-500 text-center absolute text-2xl bottom-0 mb-16 mr-5 rounded-lg text-white"
+        "bg-my-orange w-auto h-auto p-3 text-center absolute text-2xl bottom-0 mb-16 mr-5 rounded-lg text-white"
       }
       onClick={handleModal}
     >

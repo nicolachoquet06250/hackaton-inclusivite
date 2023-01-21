@@ -7,7 +7,7 @@ const StepThree = () => {
 
     return (<div className={"newMenuButtonContainer"}>
         <div>
-            Souhetez vous :
+            <div className={"mb-1"}>Souhaitez vous :</div>
             <select onChange={handleChange} value={souhait} style={{ color: 'black' }}>
                 <option value={'1'}>
                     que je vous propose un menu adapté, bio et de saison

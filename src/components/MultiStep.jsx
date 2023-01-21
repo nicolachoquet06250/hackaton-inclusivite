@@ -26,15 +26,15 @@ const MultiStep = ({steps, onNext, onValidate}) => {
     return(
         <div>
             <Component/>
-            <div style={{ marginTop: '10px' }}>
+            <div style={{ marginTop: '10px', height: "70px"}}>
                 { index !== 0 && 
-                    (<button onClick={decrement} style={{ background: 'gray', padding: '10px', borderRadius: '5px' }}>
+                    (<button onClick={decrement} className={"bg-my-orange"} style={{ padding: '10px', borderRadius: '5px', position: "absolute", bottom: "25px", left: "25px", color: "white", width: "100px" }}>
                         Précédent
                     </button>)}
                 { index !== steps.length - 1 ? 
-                    (<button onClick={increment} style={{ background: 'gray', padding: '10px', borderRadius: '5px', marginLeft: '5px' }}>
+                    (<button onClick={increment} className={"bg-my-orange"} style={{ padding: '10px', borderRadius: '5px', marginLeft: '5px', position: 'absolute', bottom: '25px', right: '25px', color: "white", width: "100px" }}>
                         Suivant
-                    </button>) : (<button onClick={onValidate} style={{ background: 'gray', padding: '10px', borderRadius: '5px', marginLeft: '5px' }}>
+                    </button>) : (<button onClick={onValidate} className={"bg-my-orange"} style={{ padding: '10px', borderRadius: '5px', marginLeft: '5px', position: 'absolute', bottom: '25px', right: '25px', color: "white", width: "100px" }}>
                         Valider
                     </button>)}
             </div>

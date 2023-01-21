@@ -99,16 +99,16 @@ const StepFour = () => {
     const [activeTab, setActiveTab] = useState('1');
 
     return (<div className={"newMenuButtonContainer"}>
-        <div className='flex'>
-            <div className='flex-1 text-center py-4' 
+        <div className='flex mb-2'>
+            <div className='flex-1 text-center py-4'
                  onClick={() => setActiveTab('1')}
-                 style={{ borderBottom: activeTab === '1' ? '4px solid white' : false, cursor: 'pointer' }}>
+                 style={{ borderBottom: activeTab === '1' ? '4px solid #FF9B42' : false, cursor: 'pointer' }}>
                     Plat
             </div>
 
-            <div className='flex-1 text-center py-4' 
+            <div className='flex-1 text-center py-4'
                  onClick={() => setActiveTab('2')} 
-                 style={{ borderBottom: activeTab === '2' ? '4px solid white' : false, cursor: 'pointer' }}>
+                 style={{ borderBottom: activeTab === '2' ? '4px solid #FF9B42' : false, cursor: 'pointer' }}>
                 Dessert
             </div>
         </div>
