@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-size: 1.2rem;
+}
+
 :root {
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
